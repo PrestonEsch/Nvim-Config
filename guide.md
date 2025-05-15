@@ -17,6 +17,10 @@ Select / Accept        >  `Enter (<CR>)`
 Open This Guide        >  `Space + ?`
 Open Todo List         >  `Space + D`
 
+## Duck (duck)
+Hatch a duck           > `Space + \ + r`
+Cook a duck            > `Space + \ + c`
+
 # Other Info
 Leader = `Space`
 

@@ -30,3 +30,6 @@ vim.keymap.set("n", "<Leader>d", function()
     local config_dir = vim.fn.fnamemodify(vim.env.MYVIMRC, ":h")
     vim.cmd("edit " .. config_dir .. "/todo.md")
 end, { desc = "Open the todo list that lives in the config dir" })
+
+-- Python .venv
+vim.g.python3_host_prog = vim.fn.expand("~/.venv/Scripts/python.exe")

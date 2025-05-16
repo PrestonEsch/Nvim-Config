@@ -1,6 +1,12 @@
 local function get_pylint_path()
 	local venv = os.getenv("VIRTUAL_VENV") or (vim.fn.getcwd() .. "/.venv")
-	return venv .. "/Scripts/pylint.exe"
+    local pylint = venv .. "/Scripts/pylint.exe"
+
+    -- Checking if it really exists
+    if vim.fn.filereadable(pylint) == 1 then
+        return pylint
+    end
+    return nil
 end
 
 return {
@@ -8,16 +14,20 @@ return {
 	config = function()
 		local null_ls = require("null-ls")
 
-		local python_venv = vim.fn.getcwd() .. "/.venv/Script/pylint.exe"
-
 		-- Setting up sources
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.stylua, -- Lua
+				-- Lua
+				null_ls.builtins.formatting.stylua,
 
+				-- Python
 				null_ls.builtins.diagnostics.pylint.with({
 					command = get_pylint_path(),
-				}), -- Python
+
+                    extra_args = {
+                        "--output-format=json",
+                    }
+				}),
 				null_ls.builtins.formatting.black,
 			},
 		})

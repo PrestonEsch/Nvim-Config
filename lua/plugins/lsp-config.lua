@@ -15,7 +15,6 @@ return {
 				ensure_installed = {
 					"lua_ls", -- Lua Language Server
 					"pyright", -- Python
-					--                    "ruff", -- For Later
 				},
 			})
 		end,

@@ -7,7 +7,7 @@ vim.opt.shiftwidth = 4
 -- Auto updates the LSP feedback while in insert, and formats the message
 vim.diagnostic.config({
     virtual_text = {
-        spacing = 6,
+        spacing = 3,
     },
     signs = true,
     underline = true,

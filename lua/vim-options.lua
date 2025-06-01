@@ -32,4 +32,4 @@ vim.keymap.set("n", "<Leader>d", function()
 end, { desc = "Open the todo list that lives in the config dir" })
 
 -- Python .venv
-vim.g.python3_host_prog = vim.fn.expand("~/.venv/Scripts/python.exe")
+vim.g.python3_host_prog = vim.fn.expand(".venv\\Scripts\\python.exe")

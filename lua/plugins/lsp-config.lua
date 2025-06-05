@@ -40,7 +40,7 @@ return {
 				ensure_installed = {
 					"lua_ls", -- Lua Language Server
 					"ruff", -- Python
-					"gl_analyzer", -- GLSL
+					"glsl_analyzer", -- GLSL
                     "sqlls",
 				},
 			})
